@@ -1,0 +1,28 @@
+# One final release per Perl series. The first field is the label and install directory.
+# The second field is the source archive URL.
+1.0 https://codeload.github.com/AnaTofuZ/Perl-1.0/tar.gz/fe3821bab967ab688fc9f5f9c4dadcbd325cbbdc
+2.001 https://mirrors.develooper.com/perl/historical-perl/perl2.001.tar.gz
+3.01 https://mirrors.develooper.com/perl/historical-perl/perl3.01.tar.gz
+4.036 https://mirrors.develooper.com/perl/historical-perl/perl-4.0.36.tar.gz
+5.004_05 https://www.cpan.org/src/5.0/perl5.004_05.tar.gz
+5.005_04 https://www.cpan.org/src/5.0/perl5.005_04.tar.gz
+5.6.2 https://www.cpan.org/src/5.0/perl-5.6.2.tar.gz
+5.8.9 https://www.cpan.org/src/5.0/perl-5.8.9.tar.gz
+5.10.1 https://www.cpan.org/src/5.0/perl-5.10.1.tar.gz
+5.12.5 https://www.cpan.org/src/5.0/perl-5.12.5.tar.gz
+5.14.4 https://www.cpan.org/src/5.0/perl-5.14.4.tar.gz
+5.16.3 https://www.cpan.org/src/5.0/perl-5.16.3.tar.gz
+5.18.4 https://www.cpan.org/src/5.0/perl-5.18.4.tar.gz
+5.20.3 https://www.cpan.org/src/5.0/perl-5.20.3.tar.gz
+5.22.4 https://www.cpan.org/src/5.0/perl-5.22.4.tar.gz
+5.24.4 https://www.cpan.org/src/5.0/perl-5.24.4.tar.gz
+5.26.3 https://www.cpan.org/src/5.0/perl-5.26.3.tar.gz
+5.28.3 https://www.cpan.org/src/5.0/perl-5.28.3.tar.gz
+5.30.3 https://www.cpan.org/src/5.0/perl-5.30.3.tar.gz
+5.32.1 https://www.cpan.org/src/5.0/perl-5.32.1.tar.gz
+5.34.3 https://www.cpan.org/src/5.0/perl-5.34.3.tar.gz
+5.36.3 https://www.cpan.org/src/5.0/perl-5.36.3.tar.gz
+5.38.5 https://www.cpan.org/src/5.0/perl-5.38.5.tar.gz
+5.40.5 https://www.cpan.org/src/5.0/perl-5.40.5.tar.gz
+5.42.3 https://www.cpan.org/src/5.0/perl-5.42.3.tar.gz
+5.44.0 https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz

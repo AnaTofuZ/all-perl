@@ -1,0 +1,49 @@
+all-perl 作業記録（2026-11-04）
+
+目的
+  ruby/all-ruby と同様に、同じ Perl コードを複数の歴代インタプリタで実行する。
+  今回は Perl 1.0 から 5.44 まで、各系列の最終リリースを一つずつ収録した。
+  収録対象は versions.txt の 26 版。途中のパッチリリースや開発版は対象外。
+
+作成したもの
+  Dockerfile       Debian 上で各版をビルドするイメージ。
+  versions.txt     版とソースアーカイブの URL 一覧。
+  build.sh         ソース取得、旧版への互換修正、ビルド、配置、簡易実行確認。
+  all-perl         各版へ同じ引数を渡して順番に実行するコマンド。
+  patches/         Perl 1、2、4 のソース互換パッチ。
+  test.sh          版選択、範囲指定、失敗時の終了コードの確認。
+  README.md        利用方法と対象範囲。
+
+旧版のビルド対応
+  Perl 1.0: 公開済みの修正版ソースをコミットで固定し、glibc で消えた
+    sys_errlist 依存を strerror に変更した。
+  Perl 2: 古い Configure と makedepend、yacc 定義、sprintf 宣言、
+    TLS 化された errno、共通シンボル、独自 malloc の問題に対応した。
+  Perl 3: 古い Configure と makedepend、yacc 定義、存在しない
+    passwd.pw_comment、errno、独自 malloc の問題に対応した。
+  Perl 4: 古い Configure と makedepend、デバッグ変数の条件付き定義、
+    glibc の API 検出、独自 malloc の問題に対応した。
+  Perl 5.004/5.005: 旧 Configure、x2p の依存ルール、math ライブラリの
+    リンクに対応。5.005 では廃止された asm/page.h の参照を除いた。
+  Perl 5.6 以降: Devel::PatchPerl を適用してビルドした。
+
+確認済み
+  docker build --platform linux/arm64 -t all-perl:all . が成功。
+  完成イメージは linux/arm64、440,398,582 バイト。
+  docker run --rm all-perl:all -e 'print "ok\n";' で全 26 版が ok を出力。
+  同じ .pl ファイルをマウントして全 26 版で実行し、全版が file を出力。
+  ALL_PERL_SINCE=5.40 は 5.40.5、5.42.3、5.44.0 のみ実行。
+  ALL_PERL_BINS='1.0 5.44.0' は指定した 2 版のみ実行。
+  Perl 2〜4 の同梱ライブラリの読み込みを確認。
+  ./test.sh と sh -n build.sh all-perl test.sh が成功。
+
+利用例
+  docker build -t all-perl .
+  docker run --rm all-perl -e 'print "hello\n";'
+  docker run --rm -e ALL_PERL_SINCE=5.40 all-perl -e 'print "ok\n";'
+
+未確認・制限
+  全 26 版をまとめた amd64 イメージのビルドは未確認。
+  各 Perl の上流テストスイート（make test）は実行していない。
+  ソースアーカイブは HTTPS の版付き URL から取得するが、SHA256 は未固定。
+  この作業ディレクトリは Git リポジトリではなく、コミットや公開はしていない。

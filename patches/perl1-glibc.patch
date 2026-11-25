@@ -1,0 +1,10 @@
+--- a/stab.c
++++ b/stab.c
+@@ -157,8 +157,7 @@
+     case '!':
+ 	str_numset(stab->stab_val, (double)errno);
+-	str_set(stab->stab_val,
+-	  errno < 0 || errno > sys_nerr ? "(unknown)" : sys_errlist[errno]);
++	str_set(stab->stab_val, strerror(errno));
+ 	stab->stab_val->str_nok = 1;	/* what a wonderful hack! */
+ 	break;

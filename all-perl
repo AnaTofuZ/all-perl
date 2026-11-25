@@ -1,0 +1,46 @@
+#!/bin/sh
+set -u
+
+if [ "$#" -eq 0 ]; then
+    echo 'usage: all-perl PERL-ARGS' >&2
+    echo 'ALL_PERL_BINS="1.010 5.44.0" selects versions; ALL_PERL_SINCE=5.20 selects a lower bound' >&2
+    exit 2
+fi
+
+root=${ALL_PERL_ROOT:-/opt/perls}
+status=0
+found=0
+while read -r version url <&3; do
+    case "$version" in ''|'#'*) continue ;; esac
+    dir=$root/$version
+    [ -x "$dir/bin/perl" ] || continue
+    if [ -n "${ALL_PERL_BINS:-}" ]; then
+        case " $ALL_PERL_BINS " in *" $version "*) ;; *) continue ;; esac
+    fi
+    if [ -n "${ALL_PERL_SINCE:-}" ]; then
+        first=$(printf '%s\n%s\n' "$version" "$ALL_PERL_SINCE" | sort -V | head -n 1)
+        [ "$first" = "$ALL_PERL_SINCE" ] || continue
+    fi
+    found=1
+    printf '%-12s ' "$version"
+    case "$version" in
+    2.*|3.*|4.*)
+        output=$("$dir/bin/perl" -I"$dir/lib" "$@" 2>&1)
+        ;;
+    *)
+        output=$("$dir/bin/perl" "$@" 2>&1)
+        ;;
+    esac
+    result=$?
+    printf '%s\n' "$output"
+    if [ "$result" -ne 0 ]; then
+        printf '             exit %s\n' "$result"
+        status=1
+    fi
+done 3<versions.txt
+
+if [ "$found" -eq 0 ]; then
+    echo 'no matching Perl binaries' >&2
+    exit 2
+fi
+exit "$status"

@@ -1,0 +1,9 @@
+--- a/toke.c
++++ b/toke.c
+@@ -239,7 +239,7 @@
+     oldbufptr = s;
+ 
+   retry:
+-#ifdef YYDEBUG
++#ifdef DEBUGGING
+     if (debug & 1)

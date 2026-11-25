@@ -1,0 +1,13 @@
+--- a/perl.h
++++ b/perl.h
+@@ -64,12 +64,6 @@
+ #include "array.h"
+ #include "hash.h"
+ 
+-#ifdef CHARSPRINTF
+-    char *sprintf();
+-#else
+-    int sprintf();
+-#endif
+-
+ /* A string is TRUE if not "" or "0". */
