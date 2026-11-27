@@ -1,28 +1,28 @@
 # One final release per Perl series. The first field is the label and install directory.
-# The second field is the source archive URL.
-1.0 https://codeload.github.com/AnaTofuZ/Perl-1.0/tar.gz/fe3821bab967ab688fc9f5f9c4dadcbd325cbbdc
-2.001 https://mirrors.develooper.com/perl/historical-perl/perl2.001.tar.gz
-3.01 https://mirrors.develooper.com/perl/historical-perl/perl3.01.tar.gz
-4.036 https://mirrors.develooper.com/perl/historical-perl/perl-4.0.36.tar.gz
-5.004_05 https://www.cpan.org/src/5.0/perl5.004_05.tar.gz
-5.005_04 https://www.cpan.org/src/5.0/perl5.005_04.tar.gz
-5.6.2 https://www.cpan.org/src/5.0/perl-5.6.2.tar.gz
-5.8.9 https://www.cpan.org/src/5.0/perl-5.8.9.tar.gz
-5.10.1 https://www.cpan.org/src/5.0/perl-5.10.1.tar.gz
-5.12.5 https://www.cpan.org/src/5.0/perl-5.12.5.tar.gz
-5.14.4 https://www.cpan.org/src/5.0/perl-5.14.4.tar.gz
-5.16.3 https://www.cpan.org/src/5.0/perl-5.16.3.tar.gz
-5.18.4 https://www.cpan.org/src/5.0/perl-5.18.4.tar.gz
-5.20.3 https://www.cpan.org/src/5.0/perl-5.20.3.tar.gz
-5.22.4 https://www.cpan.org/src/5.0/perl-5.22.4.tar.gz
-5.24.4 https://www.cpan.org/src/5.0/perl-5.24.4.tar.gz
-5.26.3 https://www.cpan.org/src/5.0/perl-5.26.3.tar.gz
-5.28.3 https://www.cpan.org/src/5.0/perl-5.28.3.tar.gz
-5.30.3 https://www.cpan.org/src/5.0/perl-5.30.3.tar.gz
-5.32.1 https://www.cpan.org/src/5.0/perl-5.32.1.tar.gz
-5.34.3 https://www.cpan.org/src/5.0/perl-5.34.3.tar.gz
-5.36.3 https://www.cpan.org/src/5.0/perl-5.36.3.tar.gz
-5.38.5 https://www.cpan.org/src/5.0/perl-5.38.5.tar.gz
-5.40.5 https://www.cpan.org/src/5.0/perl-5.40.5.tar.gz
-5.42.3 https://www.cpan.org/src/5.0/perl-5.42.3.tar.gz
-5.44.0 https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz
+# The second field is the source archive URL, the third its SHA-256 digest.
+1.0 https://codeload.github.com/AnaTofuZ/Perl-1.0/tar.gz/fe3821bab967ab688fc9f5f9c4dadcbd325cbbdc 036645d80b3486554cbb377e6a1128ef72a607074162d64197b42f73c947d7b9
+2.001 https://mirrors.develooper.com/perl/historical-perl/perl2.001.tar.gz 4a0d54d7d4b12b6ce2f3e5d03dec48b32b3957c629bc410c77c255c9f8ec242c
+3.01 https://mirrors.develooper.com/perl/historical-perl/perl3.01.tar.gz e0b6aac6ce7c3ff8548cd42b4e0dc8261a3f3e3b8a399f00e6572199649ea317
+4.036 https://mirrors.develooper.com/perl/historical-perl/perl-4.0.36.tar.gz fa7a759cc3047714f25eb8c7e850275c5b35808759679969cf70da3003e2c461
+5.004_05 https://www.cpan.org/src/5.0/perl5.004_05.tar.gz 1184478b298978b164a383ed5661e3a117c48ab97d6d0ab7ef614cdbe918b9eb
+5.005_04 https://www.cpan.org/src/5.0/perl5.005_04.tar.gz 5e44972df2e0cec6104d914ecf884ee093069b497b2b2deee11516fb20979003
+5.6.2 https://www.cpan.org/src/5.0/perl-5.6.2.tar.gz a5e66f6ebf701b0567f569f57cae82abf5ce57af70a2b45ae71323b61f49134e
+5.8.9 https://www.cpan.org/src/5.0/perl-5.8.9.tar.gz 60dfe024286299b547895b6bc8f41c20c7e83d292f3a406e113ba1951aa38da1
+5.10.1 https://www.cpan.org/src/5.0/perl-5.10.1.tar.gz cb7f26ea4b2b28d6644354d87a269d01cac1b635287dae64e88eeafa24b44f35
+5.12.5 https://www.cpan.org/src/5.0/perl-5.12.5.tar.gz 1db3d7cf39ac0379233211dd41afad300c11b33e3219e1d76908d01172f84a5c
+5.14.4 https://www.cpan.org/src/5.0/perl-5.14.4.tar.gz 803fd44c492fcef79fda456a6f50455766e00ddec2e568a543630f65ff3f44cb
+5.16.3 https://www.cpan.org/src/5.0/perl-5.16.3.tar.gz 69cf08dca0565cec2c5c6c2f24b87f986220462556376275e5431cc2204dedb6
+5.18.4 https://www.cpan.org/src/5.0/perl-5.18.4.tar.gz 01a4e11a9a34616396c4a77b3cef51f76a297e1a2c2c490ae6138bf0351eb29f
+5.20.3 https://www.cpan.org/src/5.0/perl-5.20.3.tar.gz 3524e3a76b71650ab2f794fd68e45c366ec375786d2ad2dca767da424bbb9b4a
+5.22.4 https://www.cpan.org/src/5.0/perl-5.22.4.tar.gz ba9ef57c2b709f2dad9c5f6acf3111d9dfac309c484801e0152edbca89ed61fa
+5.24.4 https://www.cpan.org/src/5.0/perl-5.24.4.tar.gz bf2f3dddb10154d833cdb415a93f1672b6d8599e87913b66c085c332cb361970
+5.26.3 https://www.cpan.org/src/5.0/perl-5.26.3.tar.gz b75ae40de8292fa53021b35eb3552fcaf65d7891ce4c5b6668d665cb0233c493
+5.28.3 https://www.cpan.org/src/5.0/perl-5.28.3.tar.gz afc9c1d661597ae14d9e883c5071092bed73f60c3109b294823ea01aca705114
+5.30.3 https://www.cpan.org/src/5.0/perl-5.30.3.tar.gz 32e04c8bb7b1aecb2742a7f7ac0eabac100f38247352a73ad7fa104e39e7406f
+5.32.1 https://www.cpan.org/src/5.0/perl-5.32.1.tar.gz 03b693901cd8ae807231b1787798cf1f2e0b8a56218d07b7da44f784a7caeb2c
+5.34.3 https://www.cpan.org/src/5.0/perl-5.34.3.tar.gz 5b12f62863332b2a5f54102af9cdf8c010877e4bf3294911edbd594b2a1e8ede
+5.36.3 https://www.cpan.org/src/5.0/perl-5.36.3.tar.gz f2a1ad88116391a176262dd42dfc52ef22afb40f4c0e9810f15d561e6f1c726a
+5.38.5 https://www.cpan.org/src/5.0/perl-5.38.5.tar.gz b7667d3ff309068852af7853910aaccec26c839d717402121b664ac705e07bfe
+5.40.5 https://www.cpan.org/src/5.0/perl-5.40.5.tar.gz 09d926ae2d1b277c3bce62054c41da47c981380d719c41cf980b67945cc581ed
+5.42.3 https://www.cpan.org/src/5.0/perl-5.42.3.tar.gz 1137740985837b5cdf15f0cfab932279dcb4352f912fed6fc144e8b4f0823627
+5.44.0 https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz 3b855066b92491cb40e86affb1ca57d1a388aa43e51b91c7806a32c2f65f96c3

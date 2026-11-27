@@ -4,7 +4,7 @@ set -eu
 selection=${1:-all}
 mkdir -p /opt/perls /tmp/all-perl-build
 
-while read -r version url <&3; do
+while read -r version url sha256 <&3; do
     case "$version" in ''|'#'*) continue ;; esac
     if [ "$selection" != all ]; then
         case " $selection " in *" $version "*) ;; *) continue ;; esac
@@ -15,14 +15,18 @@ while read -r version url <&3; do
     source=/tmp/all-perl-build/source
     rm -rf "$source"
     mkdir -p "$source"
-    # shortcut: source archives rely on versioned HTTPS URLs; pin digests before publishing images.
     curl --fail --location --retry 3 --silent --show-error "$url" -o "$archive"
+    echo "$sha256  $archive" | sha256sum -c -
     tar -xzf "$archive" -C "$source" --strip-components=1
     cd "$source"
     [ "$version" != 4.036 ] || cd src
 
     case "$version" in
-        1.*) patch -p1 < /all-perl/patches/perl1-glibc.patch ;;
+        1.*)
+            patch -p1 < /all-perl/patches/perl1-glibc.patch
+            # Configure's pointer-size probe includes a missing static_assert.h, falls back to 4 and picks perl's malloc, which clashes with glibc.
+            sed -i "s|^usemymalloc=''$|usemymalloc='n'|" Configure
+            ;;
         2.*|3.*|4.*|5.004_05)
             # shortcut: these Configures reject redirected stdin, remove the obsolete terminal check in a noninteractive build.
             sed -i '/if test ! -t 0; then/,/^fi$/d' Configure
