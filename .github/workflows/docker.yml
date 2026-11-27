@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/all-perl
+  IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/all-perl
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
       - run: docker run --rm all-perl -e 'print "ok\n";'
       - uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: |
           docker tag all-perl "$IMAGE:${{ github.sha }}-${{ matrix.arch }}"
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: |
           docker buildx imagetools create \
